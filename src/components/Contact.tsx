@@ -8,42 +8,42 @@ interface ContactProps {
 const translations = {
   en: {
     heading: "Contact",
-    subheading: "Get in Touch",
+    subheading: "Let's create your story together",
     email: "Email",
     phone: "Phone",
-    message: "Message",
+    message: "Tell me about your dream session",
     send: "Send Message",
     location: "Location",
-    name: "Name",
+    name: "Your Name",
     successMessage: "Message sent successfully!",
-    locationValue: "Berlin, Germany",
-    phoneValue: "+49 (30) 123-4567",
+    locationValue: "Moscow, Russia",
+    phoneValue: "+7 (999) 123-45-67",
   },
   de: {
     heading: "Kontakt",
-    subheading: "Treten Sie mit uns in Kontakt",
+    subheading: "Lassen Sie uns Ihre Geschichte gemeinsam schaffen",
     email: "E-Mail",
     phone: "Telefon",
-    message: "Nachricht",
+    message: "Erzählen Sie mir von Ihrem Traum-Shooting",
     send: "Nachricht senden",
     location: "Standort",
-    name: "Name",
+    name: "Ihr Name",
     successMessage: "Nachricht erfolgreich gesendet!",
-    locationValue: "Berlin, Deutschland",
-    phoneValue: "+49 (30) 123-4567",
+    locationValue: "Moskau, Russland",
+    phoneValue: "+7 (999) 123-45-67",
   },
   ru: {
     heading: "Контакты",
-    subheading: "Свяжитесь с нами",
+    subheading: "Давайте вместе создадим вашу историю",
     email: "Эл. почта",
     phone: "Телефон",
-    message: "Сообщение",
+    message: "Расскажите о вашей идеальной съёмке",
     send: "Отправить",
     location: "Город",
-    name: "Имя",
+    name: "Ваше имя",
     successMessage: "Сообщение успешно отправлено!",
-    locationValue: "Берлин, Германия",
-    phoneValue: "+49 (30) 123-4567",
+    locationValue: "Москва, Россия",
+    phoneValue: "+7 (999) 123-45-67",
   },
 }
 
@@ -55,7 +55,7 @@ export default function Contact({ language }: ContactProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const mailtoLink = `mailto:hello@example.com?subject=${encodeURIComponent(`New message from ${formData.name}`)}&body=${encodeURIComponent(`From: ${formData.email}\n\n${formData.message}`)}`
+    const mailtoLink = `mailto:hello@example.com?subject=${encodeURIComponent(`Заявка на съёмку от ${formData.name}`)}&body=${encodeURIComponent(`От: ${formData.email}\n\n${formData.message}`)}`
     window.location.href = mailtoLink
 
     setSubmitted(true)
@@ -73,7 +73,6 @@ export default function Contact({ language }: ContactProps) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact Info */}
           <div className="space-y-8 animate-fade-in-up">
             <div>
               <small className="font-medium text-charcoal/70 mb-2 block">{t.email}</small>
@@ -89,7 +88,6 @@ export default function Contact({ language }: ContactProps) {
             </div>
           </div>
 
-          {/* Contact Form */}
           <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in-up">
             {submitted && (
               <div className="p-4 bg-gold/10 border border-gold/20 text-charcoal rounded text-sm">

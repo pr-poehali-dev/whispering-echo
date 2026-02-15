@@ -6,33 +6,33 @@ const translations = {
   en: {
     copyright: "All rights reserved.",
     followMe: "Follow",
-    subtitle: "Classical Pianist",
+    subtitle: "Professional Photographer",
     quickLinks: "Quick Links",
-    biography: "Biography",
-    concerts: "Concerts",
-    gallery: "Gallery",
+    about: "About",
+    services: "Services",
+    portfolio: "Portfolio",
     privacyPolicy: "Privacy Policy",
     terms: "Terms",
   },
   de: {
     copyright: "Alle Rechte vorbehalten.",
     followMe: "Folgen Sie mir",
-    subtitle: "Klassischer Pianist",
+    subtitle: "Professionelle Fotografin",
     quickLinks: "Schnelllinks",
-    biography: "Biographie",
-    concerts: "Konzerte",
-    gallery: "Galerie",
+    about: "Über mich",
+    services: "Leistungen",
+    portfolio: "Portfolio",
     privacyPolicy: "Datenschutz",
     terms: "AGB",
   },
   ru: {
     copyright: "Все права защищены.",
     followMe: "Соцсети",
-    subtitle: "Классический пианист",
+    subtitle: "Профессиональный фотограф",
     quickLinks: "Навигация",
-    biography: "Биография",
-    concerts: "Концерты",
-    gallery: "Галерея",
+    about: "Обо мне",
+    services: "Направления",
+    portfolio: "Портфолио",
     privacyPolicy: "Политика конфиденциальности",
     terms: "Условия",
   },
@@ -46,7 +46,7 @@ export default function Footer({ language }: FooterProps) {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-warm-white mb-4">А. Фосс</h3>
+            <h3 className="text-warm-white mb-4">Photographer</h3>
             <small className="text-warm-white/70">{t.subtitle}</small>
           </div>
 
@@ -55,17 +55,17 @@ export default function Footer({ language }: FooterProps) {
             <ul className="space-y-2 text-sm text-warm-white/70">
               <li>
                 <a href="#biography" className="hover:text-gold transition-colors">
-                  {t.biography}
+                  {t.about}
                 </a>
               </li>
               <li>
                 <a href="#concerts" className="hover:text-gold transition-colors">
-                  {t.concerts}
+                  {t.services}
                 </a>
               </li>
               <li>
                 <a href="#gallery" className="hover:text-gold transition-colors">
-                  {t.gallery}
+                  {t.portfolio}
                 </a>
               </li>
             </ul>
@@ -77,15 +77,15 @@ export default function Footer({ language }: FooterProps) {
               <a href="https://instagram.com" className="text-warm-white/70 hover:text-gold transition-colors">
                 Instagram
               </a>
-              <a href="https://facebook.com" className="text-warm-white/70 hover:text-gold transition-colors">
-                Facebook
+              <a href="https://t.me/" className="text-warm-white/70 hover:text-gold transition-colors">
+                Telegram
               </a>
             </div>
           </div>
         </div>
 
         <div className="border-t border-warm-white/20 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-warm-white/70">
-          <small>&copy; 2025 Александр Фосс. {t.copyright}</small>
+          <small>&copy; 2025 Photographer. {t.copyright}</small>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-warm-white transition-colors">
               {t.privacyPolicy}

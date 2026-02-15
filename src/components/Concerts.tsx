@@ -4,94 +4,103 @@ interface ConcertsProps {
 
 const translations = {
   en: {
-    heading: "Upcoming Concerts",
-    learnMore: "Learn More",
+    heading: "Services",
+    learnMore: "Book a Session",
   },
   de: {
-    heading: "Kommende Konzerte",
-    learnMore: "Mehr erfahren",
+    heading: "Leistungen",
+    learnMore: "Session buchen",
   },
   ru: {
-    heading: "Предстоящие концерты",
-    learnMore: "Подробнее",
+    heading: "Направления",
+    learnMore: "Записаться",
   },
 }
 
-const concerts = {
+const services = {
   en: [
     {
-      date: "08.12.2024",
-      time: "18:00",
-      title: "Piano Recital",
-      venue: "Torhaus Hamburg",
-      location: "Hamburg",
+      icon: "✨",
+      title: "Individual Sessions",
+      description: "Personal photo sessions that reveal your unique character and style",
+      details: "Studio or outdoor, 1-2 hours",
     },
     {
-      date: "16.12.2024",
-      time: "19:00",
-      title: "Piano Recital HFMT",
-      venue: "Hamburg, Orchestra Studio",
-      location: "Hamburg",
+      icon: "🤰",
+      title: "Maternity Photography",
+      description: "Tender and elegant photos capturing the most beautiful period of your life",
+      details: "Studio or home setting, gentle posing",
     },
     {
-      date: "21.12.2024",
-      time: "17:00",
-      title: "Charity Concert",
-      venue: "Rathaus Zehlendorf, Burgersaal",
-      location: "Berlin",
+      icon: "💕",
+      title: "Love Story",
+      description: "Romantic sessions for couples — your love story told through images",
+      details: "Outdoor locations, natural emotions",
+    },
+    {
+      icon: "👨‍👩‍👧‍👦",
+      title: "Family & Kids",
+      description: "Lively, warm photos that capture the joy of being together",
+      details: "Family sessions full of laughter and love",
     },
   ],
   de: [
     {
-      date: "08.12.2024",
-      time: "18:00",
-      title: "Klavierabend",
-      venue: "Torhaus Hamburg",
-      location: "Hamburg",
+      icon: "✨",
+      title: "Individuelle Sessions",
+      description: "Persönliche Fotoshootings, die Ihren einzigartigen Charakter und Stil enthüllen",
+      details: "Studio oder Outdoor, 1-2 Stunden",
     },
     {
-      date: "16.12.2024",
-      time: "19:00",
-      title: "Klavierabend HFMT",
-      venue: "Hamburg, Orchesterstudio",
-      location: "Hamburg",
+      icon: "🤰",
+      title: "Schwangerschaftsfotografie",
+      description: "Zarte und elegante Fotos, die die schönste Zeit Ihres Lebens festhalten",
+      details: "Studio oder Zuhause, sanftes Posing",
     },
     {
-      date: "21.12.2024",
-      time: "17:00",
-      title: "Benefizkonzert",
-      venue: "Rathaus Zehlendorf, Burgersaal",
-      location: "Berlin",
+      icon: "💕",
+      title: "Love Story",
+      description: "Romantische Sessions für Paare — Ihre Liebesgeschichte in Bildern",
+      details: "Outdoor-Locations, natürliche Emotionen",
+    },
+    {
+      icon: "👨‍👩‍👧‍👦",
+      title: "Familie & Kinder",
+      description: "Lebendige, warme Fotos, die die Freude des Zusammenseins einfangen",
+      details: "Familiensessions voller Lachen und Liebe",
     },
   ],
   ru: [
     {
-      date: "8 декабря 2024",
-      time: "18:00",
-      title: "Сольный концерт",
-      venue: "Торхаус Гамбург",
-      location: "Гамбург",
+      icon: "✨",
+      title: "Индивидуальные съёмки",
+      description: "Персональные фотосессии, раскрывающие ваш уникальный характер и стиль",
+      details: "Студия или улица, 1-2 часа",
     },
     {
-      date: "16 декабря 2024",
-      time: "19:00",
-      title: "Концерт в HFMT",
-      venue: "Гамбург, Оркестровая студия",
-      location: "Гамбург",
+      icon: "🤰",
+      title: "Фотосессии для беременных",
+      description: "Нежные и элегантные фотографии, запечатлевающие самый прекрасный период жизни",
+      details: "Студия или домашняя обстановка",
     },
     {
-      date: "21 декабря 2024",
-      time: "17:00",
-      title: "Благотворительный концерт",
-      venue: "Ратуша Целендорф, Бургерзаль",
-      location: "Берлин",
+      icon: "💕",
+      title: "Love Story",
+      description: "Романтические съёмки для пар — ваша история любви в фотографиях",
+      details: "Живые локации, естественные эмоции",
+    },
+    {
+      icon: "👨‍👩‍👧‍👦",
+      title: "Детские и семейные проекты",
+      description: "Живые, тёплые фотографии, передающие радость быть вместе",
+      details: "Семейные съёмки, полные смеха и любви",
     },
   ],
 }
 
 export default function Concerts({ language }: ConcertsProps) {
   const t = translations[language]
-  const concertList = concerts[language]
+  const serviceList = services[language]
 
   return (
     <section id="concerts" className="py-32 md:py-48 bg-background">
@@ -102,22 +111,24 @@ export default function Concerts({ language }: ConcertsProps) {
         </div>
 
         <div className="space-y-8">
-          {concertList.map((concert, idx) => (
+          {serviceList.map((service, idx) => (
             <div key={idx} className="pb-8 border-b border-taupe/30 last:border-b-0">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8 items-start">
                 <div>
-                  <h3 className="text-charcoal mb-1">{concert.date}</h3>
-                  <small className="text-taupe">{concert.time}</small>
+                  <span className="text-4xl mb-2 block">{service.icon}</span>
                 </div>
                 <div className="md:col-span-2">
-                  <h3 className="text-charcoal mb-1">{concert.title}</h3>
-                  <p className="text-charcoal/70 mb-1">{concert.venue}</p>
-                  <small className="text-taupe">{concert.location}</small>
+                  <h3 className="text-charcoal mb-1">{service.title}</h3>
+                  <p className="text-charcoal/70 mb-1">{service.description}</p>
+                  <small className="text-taupe">{service.details}</small>
                 </div>
                 <div className="flex justify-start md:justify-end">
-                  <button className="text-gold hover:text-gold/80 transition-colors text-sm font-medium">
+                  <a
+                    href="#contact"
+                    className="text-gold hover:text-gold/80 transition-colors text-sm font-medium"
+                  >
                     {t.learnMore} &rarr;
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

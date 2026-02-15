@@ -8,21 +8,21 @@ interface NavigationProps {
 
 const translations = {
   en: {
-    biography: "Biography",
-    concerts: "Concerts",
-    gallery: "Gallery",
+    about: "About",
+    services: "Services",
+    portfolio: "Portfolio",
     contact: "Contact",
   },
   de: {
-    biography: "Biographie",
-    concerts: "Konzerte",
-    gallery: "Galerie",
+    about: "Über mich",
+    services: "Leistungen",
+    portfolio: "Portfolio",
     contact: "Kontakt",
   },
   ru: {
-    biography: "Биография",
-    concerts: "Концерты",
-    gallery: "Галерея",
+    about: "Обо мне",
+    services: "Направления",
+    portfolio: "Портфолио",
     contact: "Контакт",
   },
 }
@@ -64,30 +64,28 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className={`${logoColor} font-serif text-2xl font-normal tracking-wide transition-colors duration-300`}>
-            A. Voss
+            Photographer
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             <a
               href="#biography"
               className={`text-sm ${navLinkColor} ${navLinkHoverColor} transition-colors duration-300`}
             >
-              {t.biography}
+              {t.about}
             </a>
             <a
               href="#concerts"
               className={`text-sm ${navLinkColor} ${navLinkHoverColor} transition-colors duration-300`}
             >
-              {t.concerts}
+              {t.services}
             </a>
             <a
               href="#gallery"
               className={`text-sm ${navLinkColor} ${navLinkHoverColor} transition-colors duration-300`}
             >
-              {t.gallery}
+              {t.portfolio}
             </a>
             <a
               href="#contact"
@@ -97,7 +95,6 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
             </a>
           </div>
 
-          {/* Language Selector */}
           <div className="flex items-center gap-4">
             <div className="flex gap-2">
               {(["en", "de", "ru"] as const).map((lang) => (
@@ -113,7 +110,6 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`md:hidden ${menuButtonColor} transition-colors duration-300`}
@@ -123,7 +119,6 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {isOpen && (
           <div
             className={`md:hidden pb-4 space-y-3 border-t ${borderColor} ${mobileMenuBg} transition-all duration-300`}
@@ -132,19 +127,19 @@ export default function Navigation({ language, onLanguageChange }: NavigationPro
               href="#biography"
               className={`block text-sm ${mobileLinkColor} hover:text-gold transition-colors duration-300 py-2`}
             >
-              {t.biography}
+              {t.about}
             </a>
             <a
               href="#concerts"
               className={`block text-sm ${mobileLinkColor} hover:text-gold transition-colors duration-300 py-2`}
             >
-              {t.concerts}
+              {t.services}
             </a>
             <a
               href="#gallery"
               className={`block text-sm ${mobileLinkColor} hover:text-gold transition-colors duration-300 py-2`}
             >
-              {t.gallery}
+              {t.portfolio}
             </a>
             <a
               href="#contact"
